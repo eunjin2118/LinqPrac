@@ -24,7 +24,7 @@ namespace LinqPrac
                 Console.WriteLine(item);
             }
 
-            var output2 = from item in input
+            var output2 = from item in input //ienum타입이라서 output = output2가 안 됨 형변환 해야 함
                           where item % 2 == 0
                           orderby item 
                           select item;
@@ -33,6 +33,9 @@ namespace LinqPrac
             {
                 Console.WriteLine(item);
             }
+
+            output = output2.ToList<int>();
+            int[] output3 = output2.ToArray<int>();
 
         }
     }
